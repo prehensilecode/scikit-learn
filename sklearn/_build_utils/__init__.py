@@ -27,7 +27,7 @@ def get_blas_info():
 
     blas_info = get_info('blas_opt', 0)
     if (not blas_info) or atlas_not_found(blas_info):
-        cblas_libs = ['cblas']
+        cblas_libs = ['cblas', 'blas']
         blas_info.pop('libraries', None)
     else:
         cblas_libs = blas_info.pop('libraries', [])
